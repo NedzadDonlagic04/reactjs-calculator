@@ -1,7 +1,62 @@
 .app {
+	--app-bg-color: #979494;
+	--calculator-container-bg-color: #0C0404;
+	--calculator-btn-bg-color: #3B3C36;
+
 	min-height: 100vh;
+
+	background-color: var(--app-bg-color);
 
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.calculator-container {
+	background-color: var(--calculator-container-bg-color);
+
+	font-size: 20px;
+
+	width: 500px;
+
+	padding: 1rem;
+}
+
+.button-group {
+	display: flex;
+}
+
+.button-group button {
+	cursor: pointer;
+	width: 50%;
+
+	font-size: 1em;
+	font-weight: bold;
+	color: white;
+
+	background-color: var(--calculator-btn-bg-color);
+	border: none;
+	
+	padding: 1.5em 1em;
+}
+
+.button-group button:hover {
+	box-shadow: inset 0px 0px 2px 2px white;
+}
+
+.full-width {
+	flex: 0 0 50%;
+}
+
+.calculator-display {
+	background-color: black;
+	color: white;
+
+	text-align: right;
+	font-size: 1.2em;
+
+	padding: 1em .3em;
+	margin-bottom: .5em;
+
+	overflow: hidden;
 }

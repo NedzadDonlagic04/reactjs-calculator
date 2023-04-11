@@ -1,18 +1,14 @@
 import ButtonContainer from './ButtonContainer';
 import CalculatorScreen from './CalculatorScreen';
 import { useState } from 'react';
+import CalculatorFunctionality from './../classes/CalculatorFunctionality.js';
+
+const calculatorFunctionality = new CalculatorFunctionality('0');
 
 function Calculator() {
 	const [displayText, displayTextSetter] = useState('0');
 
-	const onClickHandler = e => {
-		displayTextSetter(val => {
-			if(val === '0') return e;
-			else if(e === 'AC') return '0';
-
-			return val + e;	 
-		});
-	}
+	const onClickHandler = key => displayTextSetter(calculatorFunctionality.next(key));
 
 	return (
 		<div className="calculator-container">

@@ -36,8 +36,8 @@ export default class CalculatorFunctionality {
 
 		const val = parseFloat(this.text);
 
-		if(typeof(val) === 'number') this.canAddPeriod = true;
-		else this.text = this.errorMsg;
+		if(isNaN(val) || !isFinite(val)) this.text = this.errorMsg;
+		else this.canAddPeriod = true;
 	}
 
 	next(key) {
